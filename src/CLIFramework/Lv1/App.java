@@ -1,4 +1,4 @@
-package CLIFramework.domain.Lv1;
+package CLIFramework.Lv1;
 
 import java.util.Scanner;
 
@@ -40,26 +40,47 @@ public class App {
 
     public void getScores() {
         for(int i=0; i<scores.length; i++) {
-            System.out.print("scores["+i+"] = " + scores[i]);
+            System.out.print("scores["+i+"]> " );
             scores[i] = Integer.parseInt(scanner.nextLine());
         }
     }
     public void printScore() {
         for(int i=0; i<scores.length; i++) {
-            System.out.println("scores["+i+"] = " + scores[i]);
+            System.out.println("scores["+i+"] : " + scores[i]);
         }
     }
     public void exit() {
         run = false;
     }
 
-    public void executeCommand(int SelectNo) {
-//        if (selectNo == 1) {
-//            getStudentNum();
-//        } else if (selectNo==2) {
-//            getScores();
-//        } else if(selectNo==3) {
-//            printScore();
-//        }
+    public void executeCommand(int selectNo) {
+        if (selectNo == 1) {
+            getStudentNum();
+        } else if (selectNo==2) {
+            getScores();
+        } else if(selectNo==3) {
+            printScore();
+        } else if(selectNo==4) {
+            analize();
+        } else if(selectNo == 5) {
+            exit();
+        }
     }
+
+    public void run() {
+        while(run) {
+            printMenu();
+            int selectNo = getSelect();
+            executeCommand(selectNo);
+        }
+
+        System.out.println("프로그램 종료");
+    }
+
+    public static void main(String[] args) {
+        App app = new App();
+        app.run();
+    }
+
+
 }

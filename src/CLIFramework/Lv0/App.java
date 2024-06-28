@@ -1,4 +1,4 @@
-package CLIFramework.domain.Lv0;
+package CLIFramework.Lv0;
 
 import java.util.Scanner;
 
