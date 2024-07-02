@@ -1,7 +1,7 @@
 package CLIFramework.Lv3;
 
 import CLIFramework.Lv2.Menu;
-import CLIFramework.Lv3.Command.*;
+import CLIFramework.Lv3.command.*;
 
 public class App {
     Menu menu;
@@ -9,7 +9,7 @@ public class App {
 
     public App() {
         menu = new Menu();
-        commands = new Command[] {
+        commands = new Command[]{
                 new InitScoresCommand(),
                 new GetScoresCommand(),
                 new PrintScoreCommand(),
@@ -19,12 +19,12 @@ public class App {
     }
 
     public void executeCommand(int selectNo) {
-        Command command = commands[selectNo-1];
+        Command command = commands[selectNo - 1];
         command.execute();
     }
 
     public void run() {
-        while(true) {
+        while (true) {
             menu.printMenu();
             int selectNo = menu.getSelect();
             executeCommand(selectNo);

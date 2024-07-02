@@ -1,16 +1,16 @@
-package CLIFramework.Lv3.Command;
+package CLIFramework.Lv3.command;
 
 import CLIFramework.Lv2.Input;
 import CLIFramework.Lv3.domain.StudentScores;
 
-public class GetScoresCommand implements Command{
+public class GetScoresCommand implements Command {
     StudentScores studentScores = StudentScores.getInstance();
 
     @Override
     public void execute() {
-        int [] scores = studentScores.getScores();
+        int[] scores = studentScores.getScores();
 
-        for(int i = 0; i < scores.length; i++){
+        for (int i = 0; i < scores.length; i++) {
             scores[i] = Input.getInt("scores[" + i + "]> ");
         }
     }

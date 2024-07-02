@@ -1,9 +1,9 @@
-package CLIFramework.Lv3.Command;
+package CLIFramework.Lv3.command;
 
 import CLIFramework.Lv2.Input;
 import CLIFramework.Lv3.domain.StudentScores;
 
-public class InitScoresCommand implements Command{
+public class InitScoresCommand implements Command {
     StudentScores studentScores = StudentScores.getInstance();
 
     @Override
