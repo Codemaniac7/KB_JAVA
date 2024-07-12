@@ -1,5 +1,7 @@
 package CLIFramework.Lv5;
 
+import CLIFramework.Lv3.command.Command;
+
 public abstract class App {
     Menu menu;
     public App() {}
@@ -9,6 +11,17 @@ public abstract class App {
 //        createMenu(menu);
     }
 
+    public void createMenu(Menu menu) {
 
+    }
+
+    public void run() {
+        //init(5); 제거
+        while(true) {
+            menu.printMenu();
+            Command command = menu.getSelect();
+            command.execute();
+        }
+    }
 
 }
